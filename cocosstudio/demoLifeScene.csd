@@ -82,16 +82,6 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="ArmatureNode_1" ActionTag="2051395412" Tag="21" IconVisible="True" LeftMargin="172.6532" RightMargin="787.3468" TopMargin="346.7158" BottomMargin="293.2842" IsLoop="True" IsAutoPlay="True" CurrentAnimationName="walk" ctype="ArmatureNodeObjectData">
-            <Size X="0.0000" Y="0.0000" />
-            <AnchorPoint />
-            <Position X="172.6532" Y="293.2842" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.1798" Y="0.4583" />
-            <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Default" Path="Default/DemoPlayer.ExportJson" Plist="" />
-          </AbstractNodeData>
         </Children>
       </ObjectData>
     </Content>
