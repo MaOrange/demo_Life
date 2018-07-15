@@ -1,3 +1,8 @@
 
 proj.android/.cproject
 proj.*
+.cocos-project.json
+config.json
+demo_Life.ccs
+demo_Life.cfg
+demo_Life.udf
