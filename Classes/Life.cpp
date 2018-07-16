@@ -11,7 +11,7 @@ void Life::damage(float x)
 
 	onShowLD->setPercent(currentLife/maxLife*100);
 
-	schedule(schedule_selector(Life::damageEffectCB), 1.0 / 60);
+	schedule(schedule_selector(Life::damageEffectCB), 1.0f / 60);
 
 }
 

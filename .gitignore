@@ -6,3 +6,4 @@ config.json
 demo_Life.ccs
 demo_Life.cfg
 demo_Life.udf
+/bin/debug/android/demo_Life-debug.apk
