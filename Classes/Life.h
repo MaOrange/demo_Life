@@ -16,7 +16,7 @@ class Life:public Node
 public:
 	Life();
 
-	void damage(float x);
+	virtual void damage(float x);
 
 	void recover(float x);
 
@@ -55,9 +55,37 @@ protected:
 
 	const float effectSpeed=20;
 
-	inline void percentUpdate();
+	virtual inline void percentUpdate();
 
 	inline void currentLifeCheck();
 };
+
+
+class LifePlus:public Life
+{
+public:
+	void addShield(float x);
+	
+	void removeAllShield();
+
+	void percentUpdate() override;
+
+	void damage(float x) override;
+
+protected:
+
+	float currentShield=0;
+
+	static std::string shield;
+
+	ui::LoadingBar * shieldLB;
+
+	bool init()override;
+
+	void shieldUpdate();
+
+};
+
+
 
 #endif // !LIFE

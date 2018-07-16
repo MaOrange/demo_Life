@@ -41,6 +41,16 @@
                 <PreSize X="0.0000" Y="0.0000" />
                 <ImageFileData Type="Default" Path="Default/LoadingBarFile.png" Plist="" />
               </AbstractNodeData>
+              <AbstractNodeData Name="lifeShield_LB" ActionTag="1439435047" Tag="11" IconVisible="False" LeftMargin="-150.0000" RightMargin="-150.0000" TopMargin="-15.0000" BottomMargin="-15.0000" ProgressInfo="0" ctype="LoadingBarObjectData">
+                <Size X="300.0000" Y="30.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="127" G="127" B="127" />
+                <PrePosition />
+                <PreSize X="0.0000" Y="0.0000" />
+                <ImageFileData Type="Default" Path="Default/LoadingBarFile.png" Plist="" />
+              </AbstractNodeData>
               <AbstractNodeData Name="lifeOnShow_LB" ActionTag="1497929393" Tag="12" IconVisible="False" LeftMargin="-150.0000" RightMargin="-150.0000" TopMargin="-15.0000" BottomMargin="-15.0000" ProgressInfo="64" ctype="LoadingBarObjectData">
                 <Size X="300.0000" Y="30.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />

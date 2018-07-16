@@ -106,3 +106,52 @@ inline void Life::currentLifeCheck()
 		currentLife = 0;
 	}
 }
+
+//LifePllus
+
+std::string LifePlus::shield = "lifeShield_LB";
+
+void LifePlus::addShield(float x)
+{
+	currentShield += x;
+	shieldUpdate();
+}
+
+void LifePlus::removeAllShield()
+{
+	currentShield = 0;
+	shieldUpdate();
+}
+
+void LifePlus::percentUpdate()
+{
+	percent = (currentLife+currentShield) / (maxLife+currentShield) * 100;
+}
+
+void LifePlus::damage(float x)
+{
+	if (x<currentShield)//the damage is no enough to break the shield
+	{
+		currentShield -= x;
+		shieldUpdate();
+	} 
+	else// shield break through and damage(x-currtentShield)
+	{
+		removeAllShield();
+		Life::damage(x-currentShield);
+	}
+	
+}
+
+bool LifePlus::init()
+{
+	shieldLB = static_cast<ui::LoadingBar*>(this->getChildren().at(0)->getChildByName(shield));
+	return Life::init();
+}
+
+void LifePlus::shieldUpdate()
+{
+	percentUpdate();
+	shieldLB->setPercent(percent + (currentShield) / (maxLife));
+	onShowLD->setPercent(percent);
+}
