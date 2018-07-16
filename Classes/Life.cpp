@@ -15,6 +15,21 @@ void Life::damage(float x)
 
 }
 
+void Life::recover(float x)
+{
+	currentLife += x;
+	currentLifeCheck();
+	percentUpdate();
+
+	onShowLD->setPercent(percent);
+
+	if (effectLD->getPercent()<percent)
+	{
+		effectLD->setPercent(percent);
+	}
+
+}
+
 Life* Life::creatWithMaxLife(float max)
 {
 	auto newLife = Life::create();
@@ -30,7 +45,7 @@ bool Life::initWithMaxLife(float max)
 
 	currentLife = max;
 
-	percent = currentLife / maxLife*100;
+	percentUpdate();
 
 	onShowLD= ((ui::LoadingBar*)rootNode->getChildByName(onShow));
 		
@@ -73,4 +88,21 @@ void Life::damageEffectCB(float dt)
 		unschedule(schedule_selector(Life::damageEffectCB));
 	}
 	
+}
+
+void Life::percentUpdate()
+{
+	percent = currentLife / maxLife * 100;
+}
+
+inline void Life::currentLifeCheck()
+{
+	if (currentLife>maxLife)
+	{
+		currentLife = maxLife;
+	} 
+	else if(currentLife<0)
+	{
+		currentLife = 0;
+	}
 }

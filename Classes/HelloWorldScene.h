@@ -18,7 +18,11 @@ public:
 
 	void damageCB(Ref* psender);
 
+	void recoverCB(Ref* psender);
+
 	Life* newNode;
+
+	
 };
 
 #endif // __HELLOWORLD_SCENE_H__

@@ -103,7 +103,11 @@ bool HelloWorld::init()
 	//tester
 	ui::Button * damageButton=(ui::Button*)(rootNode->getChildByName("Button_1"));
 
+	ui::Button * recoverButton = (ui::Button*)(rootNode->getChildByName("Button_2"));
+
 	damageButton->addClickEventListener(CC_CALLBACK_1(HelloWorld::damageCB,this));
+
+	recoverButton->addClickEventListener(CC_CALLBACK_1(HelloWorld::recoverCB, this));
 
 	return true;
 }
@@ -113,3 +117,12 @@ void HelloWorld::damageCB(Ref * psender)
 	newNode->damage(500);
 	log("damage!");
 }
+
+void HelloWorld::recoverCB(Ref * psender)
+{
+	newNode->recover(100);
+	log("cover!");
+
+}
+
+

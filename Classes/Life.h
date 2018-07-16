@@ -54,6 +54,10 @@ protected:
 	void damageEffectCB(float dt);
 
 	const float effectSpeed=20;
+
+	inline void percentUpdate();
+
+	inline void currentLifeCheck();
 };
 
 #endif // !LIFE
