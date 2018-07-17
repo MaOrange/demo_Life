@@ -89,16 +89,11 @@ bool HelloWorld::init()
 	addChild(rootNode);
 
 	//my code:
-	newNode = Life::creatWithMaxLife(5000.0);
+	newNode = Life::creatWithMaxLife(5000.0,"demoLifeScene.csb");
 
 	this->addChild(newNode,3);
 
-	newNode->setPosition(-400,-400);
-
-	//test code
-	/*newLife->setPercnet(50.0);
-
-	newLife->setMaxLife(5000);*/
+	newNode->setPosition(size.width/2,size.height/2);
 
 	//tester
 	ui::Button * damageButton=(ui::Button*)(rootNode->getChildByName("Button_1"));

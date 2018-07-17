@@ -18,7 +18,7 @@ public:
 
 	virtual void damage(float x);
 
-	void recover(float x);
+	virtual void recover(float x);
 
 	void restart(float x);
 
@@ -28,21 +28,12 @@ public:
 
 	CREATE_FUNC(Life);
 
-	static Life* creatWithMaxLife(float max);
+	static Life* creatWithMaxLife(float max, const std::string fileName);
 
-	bool initWithMaxLife(float max);
+	virtual bool initWithMaxLife(float max, const std::string fileName);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> parent of ee7a8d1... runOK
-=======
->>>>>>> parent of ee7a8d1... runOK
-	bool init();
+	virtual bool init();
 
->>>>>>> parent of ee7a8d1... runOK
 protected:
 	/*float percent;
 	float maxLife;
@@ -81,20 +72,15 @@ public:
 
 	void damage(float x) override;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 	static LifePlus* creatWithMaxLife(float max, const std::string fileName);
 
 	bool initWithMaxLife(float max, const std::string fileName);
 
-=======
->>>>>>> parent of ee7a8d1... runOK
-=======
->>>>>>> parent of ee7a8d1... runOK
-=======
->>>>>>> parent of ee7a8d1... runOK
+
 protected:
+
+	CREATE_FUNC(LifePlus);
 
 	float currentShield=0;
 

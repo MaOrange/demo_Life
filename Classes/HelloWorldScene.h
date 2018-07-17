@@ -22,7 +22,7 @@ public:
 
 	Life* newNode;
 
-	
+	Size size = Director::getInstance()->getVisibleSize();
 };
 
 #endif // __HELLOWORLD_SCENE_H__

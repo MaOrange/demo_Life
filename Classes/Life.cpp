@@ -30,17 +30,33 @@ void Life::recover(float x)
 
 }
 
-Life* Life::creatWithMaxLife(float max)
+Life* Life::creatWithMaxLife(float max, const std::string fileName)
 {
 	auto newLife = Life::create();
 
-	newLife->initWithMaxLife(max);
+	newLife->initWithMaxLife(max,fileName);
 	
 	return newLife;
 }
 
-bool Life::initWithMaxLife(float max)
+bool Life::initWithMaxLife(float max, const std::string fileName)
 {
+	//
+	auto tempScene = CSLoader::createNode(fileName);
+
+	Node* lifeRootNode = tempScene->getChildByName(root);
+
+	lifeRootNode->removeFromParent();
+
+	lifeRootNode->setPosition(Point::ZERO);
+
+	this->addChild(lifeRootNode);
+
+	rootNode = this->getChildren().at(0);
+
+	tempScene->release();
+	//
+
 	maxLife = max;
 
 	currentLife = max;
@@ -63,16 +79,6 @@ bool Life::init()
 	{
 		return false;
 	}
-
-	auto tempScene = CSLoader::createNode("demoLifeScene.csb"); 
-
-	Node* lifeRootNode = tempScene->getChildByName(root);
-
-	this->addChild(lifeRootNode);
-
-	rootNode = this->getChildren().at(0);
-
-	tempScene->release();
 
 	return true;
 }
@@ -143,9 +149,7 @@ void LifePlus::damage(float x)
 	
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 LifePlus * LifePlus::creatWithMaxLife(float max, const std::string fileName)
 {
 	LifePlus* newLifeBar = LifePlus::create();
@@ -161,7 +165,7 @@ LifePlus * LifePlus::creatWithMaxLife(float max, const std::string fileName)
 
 bool LifePlus::initWithMaxLife(float max, const std::string fileName)
 {
-	if (!Life::initWithMaxLife(max,fileName))
+	if (!Life::initWithMaxLife(max, fileName))
 	{
 		return false;
 	}
@@ -171,25 +175,16 @@ bool LifePlus::initWithMaxLife(float max, const std::string fileName)
 
 
 	return true;
-=======
-bool LifePlus::init()
-{
-	shieldLB = static_cast<ui::LoadingBar*>(this->getChildren().at(0)->getChildByName(shield));
-	return Life::init();
->>>>>>> parent of ee7a8d1... runOK
 }
 
-=======
->>>>>>> parent of ee7a8d1... runOK
 bool LifePlus::init()
 {
-=======
-bool LifePlus::init()
-{
->>>>>>> parent of ee7a8d1... runOK
 	shieldLB = static_cast<ui::LoadingBar*>(this->getChildren().at(0)->getChildByName(shield));
 	return Life::init();
+
 }
+
+
 
 void LifePlus::shieldUpdate()
 {
