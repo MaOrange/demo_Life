@@ -73,15 +73,15 @@ bool Life::initWithMaxLife(float max, const std::string fileName)
 	return true;
 }
 
-bool Life::init()
-{
-	if (!Node::init())
-	{
-		return false;
-	}
-
-	return true;
-}
+//bool Life::init()
+//{
+//	if (!Node::init())
+//	{
+//		return false;
+//	}
+//
+//	return true;
+//}
 
 void Life::damageEffectCB(float dt)
 {
@@ -177,12 +177,12 @@ bool LifePlus::initWithMaxLife(float max, const std::string fileName)
 	return true;
 }
 
-bool LifePlus::init()
-{
-	shieldLB = static_cast<ui::LoadingBar*>(this->getChildren().at(0)->getChildByName(shield));
-	return Life::init();
-
-}
+//bool LifePlus::init()
+//{
+//	shieldLB = static_cast<ui::LoadingBar*>(this->getChildren().at(0)->getChildByName(shield));
+//	return Life::init();
+//
+//}
 
 
 

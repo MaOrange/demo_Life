@@ -32,7 +32,7 @@ public:
 
 	virtual bool initWithMaxLife(float max, const std::string fileName);
 
-	virtual bool init();
+	//virtual bool init();
 
 protected:
 	/*float percent;
@@ -88,7 +88,7 @@ protected:
 
 	ui::LoadingBar * shieldLB;
 
-	bool init()override;
+	//bool init()override;
 
 	void shieldUpdate();
 
