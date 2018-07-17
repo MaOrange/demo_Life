@@ -144,6 +144,7 @@ void LifePlus::damage(float x)
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 LifePlus * LifePlus::creatWithMaxLife(float max, const std::string fileName)
 {
 	LifePlus* newLifeBar = LifePlus::create();
@@ -169,6 +170,12 @@ bool LifePlus::initWithMaxLife(float max, const std::string fileName)
 
 
 	return true;
+=======
+bool LifePlus::init()
+{
+	shieldLB = static_cast<ui::LoadingBar*>(this->getChildren().at(0)->getChildByName(shield));
+	return Life::init();
+>>>>>>> parent of ee7a8d1... runOK
 }
 
 =======

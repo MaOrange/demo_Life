@@ -33,7 +33,10 @@ public:
 	bool initWithMaxLife(float max);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of ee7a8d1... runOK
 	bool init();
 
 >>>>>>> parent of ee7a8d1... runOK
@@ -76,10 +79,13 @@ public:
 	void damage(float x) override;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	static LifePlus* creatWithMaxLife(float max, const std::string fileName);
 
 	bool initWithMaxLife(float max, const std::string fileName);
 
+=======
+>>>>>>> parent of ee7a8d1... runOK
 =======
 >>>>>>> parent of ee7a8d1... runOK
 protected:
