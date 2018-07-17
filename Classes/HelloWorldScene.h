@@ -20,15 +20,8 @@ public:
 
 	void recoverCB(Ref* psender);
 
-	void damageCB2(Ref* psender);
-
-	void recoverCB2(Ref* psender);
-
 	Life* newNode;
 
-	Life* lifePlus;
-
-	Size size = Director::getInstance()->getVisibleSize();
 	
 };
 

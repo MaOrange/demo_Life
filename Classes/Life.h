@@ -20,28 +20,33 @@ public:
 
 	void recover(float x);
 
-	//void restart(float x);//abandon
+	void restart(float x);
 
 	CC_SYNTHESIZE(float,percent,Percnet);
 	CC_SYNTHESIZE(float, maxLife, MaxLife);
 	CC_SYNTHESIZE(float, currentLife, CurrentLife);
 
-
-	static Life* creatWithMaxLife(float max, const std::string fileName);
-
-	bool initWithMaxLife(float max, const std::string fileName);
-
-protected:
-
 	CREATE_FUNC(Life);
 
+	static Life* creatWithMaxLife(float max);
+
+	bool initWithMaxLife(float max);
+
+<<<<<<< HEAD
+=======
 	bool init();
 
-	static const std::string backgournd; 
-	static const std::string effect;
-	static const std::string onShow;
-	static const std::string frame;
-	static const std::string root;
+>>>>>>> parent of ee7a8d1... runOK
+protected:
+	/*float percent;
+	float maxLife;
+	float currentLife;*/
+
+	const std::string backgournd = "lifeBackground_P";
+	const std::string effect = "lifeEffect_LB";
+	const std::string onShow = "lifeOnShow_LB";
+	const std::string frame = "lifeFrame_P";
+	const std::string root = "lifeRootNode";
 
 	ui::LoadingBar* onShowLD;
 
@@ -70,20 +75,22 @@ public:
 
 	void damage(float x) override;
 
+<<<<<<< HEAD
 	static LifePlus* creatWithMaxLife(float max, const std::string fileName);
 
 	bool initWithMaxLife(float max, const std::string fileName);
 
+=======
+>>>>>>> parent of ee7a8d1... runOK
 protected:
-	CREATE_FUNC(LifePlus);
-
-	virtual bool init() override;
 
 	float currentShield=0;
 
 	static std::string shield;
 
 	ui::LoadingBar * shieldLB;
+
+	bool init()override;
 
 	void shieldUpdate();
 
