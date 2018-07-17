@@ -89,12 +89,18 @@ bool HelloWorld::init()
 	addChild(rootNode);
 
 	//my code:
-	newNode = Life::creatWithMaxLife(5000.0);
+	newNode = Life::creatWithMaxLife(5000.0,"demoLifeScene.csb");
 
 	this->addChild(newNode,3);
 
-	newNode->setPosition(-400,-400);
+	newNode->setPosition(size.width*0.5f,size.height*0.8f);
 
+	//plus
+	//lifePlus = LifePlus::creatWithMaxLife(5000.0f);
+
+	//this->addChild(lifePlus,3);
+
+	//lifePlus->setPosition(size.width*0.5f, size.height*0.5f);
 	//test code
 	/*newLife->setPercnet(50.0);
 
@@ -108,6 +114,15 @@ bool HelloWorld::init()
 	damageButton->addClickEventListener(CC_CALLBACK_1(HelloWorld::damageCB,this));
 
 	recoverButton->addClickEventListener(CC_CALLBACK_1(HelloWorld::recoverCB, this));
+
+	//test button for plus
+	/*ui::Button * damageButtonP = (ui::Button*)(rootNode->getChildByName("Button_damage"));
+
+	ui::Button * recoverButtonP = (ui::Button*)(rootNode->getChildByName("Button_recover"));*/
+
+	/*damageButtonP->addClickEventListener(CC_CALLBACK_1(HelloWorld::damageCB2, this));
+
+	recoverButtonP->addClickEventListener(CC_CALLBACK_1(HelloWorld::recoverCB2, this));*/
 
 	return true;
 }
@@ -124,5 +139,19 @@ void HelloWorld::recoverCB(Ref * psender)
 	log("cover!");
 
 }
+
+void HelloWorld::damageCB2(Ref * psender)
+{
+	lifePlus->damage(500);
+	log("damage1!");
+}
+
+void HelloWorld::recoverCB2(Ref * psender)
+{
+	lifePlus->recover(500);
+	log("recover1!");
+}
+
+
 
 
