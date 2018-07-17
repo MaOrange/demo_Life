@@ -31,8 +31,6 @@ public:
 
 	bool initWithMaxLife(float max, const std::string fileName);
 
-	
-
 protected:
 
 	CREATE_FUNC(Life);
@@ -73,6 +71,8 @@ public:
 	void damage(float x) override;
 
 	static LifePlus* creatWithMaxLife(float max, const std::string fileName);
+
+	bool initWithMaxLife(float max, const std::string fileName);
 
 protected:
 	CREATE_FUNC(LifePlus);

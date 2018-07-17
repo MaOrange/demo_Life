@@ -181,8 +181,29 @@ void LifePlus::damage(float x)
 
 LifePlus * LifePlus::creatWithMaxLife(float max, const std::string fileName)
 {
-	 
-	return nullptr;
+	LifePlus* newLifeBar = LifePlus::create();
+
+	if (!newLifeBar || !newLifeBar->initWithMaxLife(max,fileName))
+	{
+		CC_SAFE_DELETE(newLifeBar);
+		return nullptr;
+	} 
+	
+	return newLifeBar;
+}
+
+bool LifePlus::initWithMaxLife(float max, const std::string fileName)
+{
+	if (!Life::initWithMaxLife(max,fileName))
+	{
+		return false;
+	}
+
+	//hold handle
+	shieldLB = static_cast<ui::LoadingBar*>(this->getChildren().at(0)->getChildByName(shield));
+
+
+	return true;
 }
 
 bool LifePlus::init()
