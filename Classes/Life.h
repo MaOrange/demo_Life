@@ -34,7 +34,10 @@ public:
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of ee7a8d1... runOK
 =======
 >>>>>>> parent of ee7a8d1... runOK
 	bool init();
@@ -80,10 +83,13 @@ public:
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	static LifePlus* creatWithMaxLife(float max, const std::string fileName);
 
 	bool initWithMaxLife(float max, const std::string fileName);
 
+=======
+>>>>>>> parent of ee7a8d1... runOK
 =======
 >>>>>>> parent of ee7a8d1... runOK
 =======
