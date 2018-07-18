@@ -6,7 +6,7 @@
       <ObjectData Name="Scene" ctype="GameNodeObjectData">
         <Size X="960.0000" Y="640.0000" />
         <Children>
-          <AbstractNodeData Name="lifeRootNode" ActionTag="1095578177" Alpha="231" Tag="11" IconVisible="True" RightMargin="960.0000" TopMargin="640.0000" ctype="SingleNodeObjectData">
+          <AbstractNodeData Name="lifeRootNode" ActionTag="1095578177" Tag="11" IconVisible="True" RightMargin="960.0000" TopMargin="640.0000" ctype="SingleNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <Children>
               <AbstractNodeData Name="lifeBackground_P" ActionTag="47846343" Tag="13" IconVisible="False" LeftMargin="-151.0000" RightMargin="-151.0000" TopMargin="-16.0000" BottomMargin="-16.0000" ctype="SpriteObjectData">

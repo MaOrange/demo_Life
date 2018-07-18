@@ -1,12 +1,12 @@
 <GameFile>
-  <PropertyGroup Name="demoLifePlusScene_0" Type="Scene" ID="a6cd6372-eb2b-4a5c-9978-b6a63cb9d27d" Version="3.10.0.0" />
+  <PropertyGroup Name="LifePlus" Type="Scene" ID="a6cd6372-eb2b-4a5c-9978-b6a63cb9d27d" Version="3.10.0.0" />
   <Content ctype="GameProjectContent">
     <Content>
       <Animation Duration="0" Speed="1.0000" />
       <ObjectData Name="Scene" ctype="GameNodeObjectData">
         <Size X="960.0000" Y="640.0000" />
         <Children>
-          <AbstractNodeData Name="lifeRootNode" ActionTag="1095578177" Alpha="231" Tag="11" IconVisible="True" LeftMargin="804.5135" RightMargin="155.4865" TopMargin="165.0731" BottomMargin="474.9269" ctype="SingleNodeObjectData">
+          <AbstractNodeData Name="lifeRootNode" ActionTag="1095578177" Tag="11" IconVisible="True" LeftMargin="804.5135" RightMargin="155.4865" TopMargin="165.0731" BottomMargin="474.9269" ctype="SingleNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <Children>
               <AbstractNodeData Name="lifeBackground_P" ActionTag="47846343" Tag="13" IconVisible="False" LeftMargin="-151.0000" RightMargin="-151.0000" TopMargin="-16.0000" BottomMargin="-16.0000" ctype="SpriteObjectData">
@@ -25,7 +25,7 @@
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="255" G="194" B="0" />
+                <CColor A="255" R="255" G="209" B="0" />
                 <PrePosition />
                 <PreSize X="0.0000" Y="0.0000" />
                 <ImageFileData Type="Default" Path="Default/LoadingBarFile.png" Plist="" />
@@ -45,7 +45,7 @@
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="0" G="255" B="25" />
+                <CColor A="255" R="0" G="204" B="19" />
                 <PrePosition />
                 <PreSize X="0.0000" Y="0.0000" />
                 <ImageFileData Type="Default" Path="Default/LoadingBarFile.png" Plist="" />
