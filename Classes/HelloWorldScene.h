@@ -23,6 +23,16 @@ public:
 	Life* newNode;
 
 	Size size = Director::getInstance()->getVisibleSize();
+
+	void damageCB2(Ref* psender);
+
+	void recoverCB2(Ref* psender);
+
+	void addShield(Ref* psender);
+
+	void addMax(Ref* psender);
+
+	LifePlus* lifePlus;
 };
 
 #endif // __HELLOWORLD_SCENE_H__

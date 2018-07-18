@@ -23,10 +23,7 @@ void Life::recover(float x)
 
 	onShowLD->setPercent(percent);
 
-	if (effectLD->getPercent()<percent)
-	{
-		effectLD->setPercent(percent);
-	}
+	effectCheck();
 
 }
 
@@ -54,7 +51,6 @@ bool Life::initWithMaxLife(float max, const std::string fileName)
 
 	rootNode = this->getChildren().at(0);
 
-	tempScene->release();
 	//
 
 	maxLife = max;
@@ -71,6 +67,14 @@ bool Life::initWithMaxLife(float max, const std::string fileName)
 	effectLD->setPercent(percent);
 
 	return true;
+}
+
+void Life::effectCheck()
+{
+	if (effectLD->getPercent() < percent)
+	{
+		effectLD->setPercent(percent);
+	}
 }
 
 //bool Life::init()
@@ -131,7 +135,7 @@ void LifePlus::removeAllShield()
 
 void LifePlus::percentUpdate()
 {
-	percent = (currentLife+currentShield) / (maxLife+currentShield) * 100;
+	percent = (currentLife) / (maxLife+currentShield) * 100;
 }
 
 void LifePlus::damage(float x)
@@ -145,8 +149,16 @@ void LifePlus::damage(float x)
 	{
 		removeAllShield();
 		Life::damage(x-currentShield);
+		shieldUpdate();
 	}
 	
+}
+
+void LifePlus::recover(float x)
+{
+	Life::recover(x);
+	percentUpdate();
+	shieldUpdate();
 }
 
 
@@ -173,8 +185,27 @@ bool LifePlus::initWithMaxLife(float max, const std::string fileName)
 	//hold handle
 	shieldLB = static_cast<ui::LoadingBar*>(this->getChildren().at(0)->getChildByName(shield));
 
+	currentShield = 0;
+
+	shieldLB->setPercent(0);
+
 
 	return true;
+}
+
+void LifePlus::setMaxLife(float x)
+{
+	maxLife = x;
+	percentUpdate();
+	effectCheck();
+	shieldUpdate();
+}
+
+void LifePlus::addMaxLife(float x)
+{
+	currentLife += x;
+	setMaxLife(getMaxLife()+x);
+	
 }
 
 //bool LifePlus::init()
@@ -189,6 +220,7 @@ bool LifePlus::initWithMaxLife(float max, const std::string fileName)
 void LifePlus::shieldUpdate()
 {
 	percentUpdate();
-	shieldLB->setPercent(percent + (currentShield) / (maxLife));
+	shieldLB->setPercent(percent + (currentShield) / (maxLife+currentShield)*100);
 	onShowLD->setPercent(percent);
+	effectCheck();
 }

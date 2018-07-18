@@ -84,16 +84,23 @@ bool HelloWorld::init()
 		return false;
 	}
 	
-	auto rootNode = CSLoader::createNode("demoLifeScene.csb");
+	Node* rootNode = CSLoader::createNode("demoLifeScene.csb");
 
 	addChild(rootNode);
 
 	//my code:
-	newNode = Life::creatWithMaxLife(5000.0,"demoLifeScene.csb");
+	newNode = Life::creatWithMaxLife(5000.0,"Life.csb");
 
 	this->addChild(newNode,3);
 
 	newNode->setPosition(size.width/2,size.height/2);
+
+	//
+	lifePlus = LifePlus::creatWithMaxLife(5000.0f, "LifePlus.csb");
+	
+	this->addChild(lifePlus);
+
+	lifePlus->setPosition(size.width/2,size.height*0.4);
 
 	//tester
 	ui::Button * damageButton=(ui::Button*)(rootNode->getChildByName("Button_1"));
@@ -103,6 +110,24 @@ bool HelloWorld::init()
 	damageButton->addClickEventListener(CC_CALLBACK_1(HelloWorld::damageCB,this));
 
 	recoverButton->addClickEventListener(CC_CALLBACK_1(HelloWorld::recoverCB, this));
+
+	//
+	//test button for plus
+	ui::Button * damageButtonP = (ui::Button*)(rootNode->getChildByName("Button_damage"));
+
+	ui::Button * recoverButtonP = (ui::Button*)(rootNode->getChildByName("Button_recover"));
+
+	ui::Button * addShieldButtonP = (ui::Button*)(rootNode->getChildByName("Button_shield"));
+
+	ui::Button * addMaxButtonP = (ui::Button*)(rootNode->getChildByName("Button_addMax"));
+
+	damageButtonP->addClickEventListener(CC_CALLBACK_1(HelloWorld::damageCB2, this));
+
+	recoverButtonP->addClickEventListener(CC_CALLBACK_1(HelloWorld::recoverCB2, this));
+
+	addShieldButtonP->addClickEventListener(CC_CALLBACK_1(HelloWorld::addShield, this));
+
+	addMaxButtonP->addClickEventListener(CC_CALLBACK_1(HelloWorld::addMax, this));
 
 	return true;
 }
@@ -121,3 +146,25 @@ void HelloWorld::recoverCB(Ref * psender)
 }
 
 
+void HelloWorld::damageCB2(Ref * psender)
+{
+	lifePlus->damage(500);
+	log("damage1!");
+}
+
+void HelloWorld::recoverCB2(Ref * psender)
+{
+	lifePlus->recover(500);
+	log("recover1!");
+
+}
+
+void HelloWorld::addShield(Ref * psender)
+{
+	lifePlus->addShield(260);
+}
+
+void HelloWorld::addMax(Ref * psender)
+{
+	lifePlus->addMaxLife(300);
+}

@@ -30,7 +30,9 @@ public:
 
 	static Life* creatWithMaxLife(float max, const std::string fileName);
 
-	virtual bool initWithMaxLife(float max, const std::string fileName);
+	bool initWithMaxLife(float max, const std::string fileName);
+
+	void effectCheck();
 
 	//virtual bool init();
 
@@ -72,11 +74,15 @@ public:
 
 	void damage(float x) override;
 
+	virtual void recover(float x)override;
 
 	static LifePlus* creatWithMaxLife(float max, const std::string fileName);
 
 	bool initWithMaxLife(float max, const std::string fileName);
 
+	void setMaxLife(float x);
+
+	void addMaxLife(float x);//add maxlife and add current life
 
 protected:
 
