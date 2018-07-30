@@ -2,7 +2,7 @@
 #define __HELLOWORLD_SCENE_H__
 
 #include "cocos2d.h"
-#include "Life.h"
+#include "LifePlus.h"
 
 class HelloWorld : public cocos2d::Layer
 {

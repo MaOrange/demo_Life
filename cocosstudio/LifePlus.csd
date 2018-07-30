@@ -6,7 +6,7 @@
       <ObjectData Name="Scene" ctype="GameNodeObjectData">
         <Size X="960.0000" Y="640.0000" />
         <Children>
-          <AbstractNodeData Name="lifeRootNode" ActionTag="1095578177" Tag="11" IconVisible="True" LeftMargin="804.5135" RightMargin="155.4865" TopMargin="165.0731" BottomMargin="474.9269" ctype="SingleNodeObjectData">
+          <AbstractNodeData Name="lifeRootNode" ActionTag="1095578177" Tag="11" IconVisible="True" RightMargin="960.0000" TopMargin="640.0000" ctype="SingleNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <Children>
               <AbstractNodeData Name="lifeBackground_P" ActionTag="47846343" Tag="13" IconVisible="False" LeftMargin="-151.0000" RightMargin="-151.0000" TopMargin="-16.0000" BottomMargin="-16.0000" ctype="SpriteObjectData">
@@ -62,10 +62,10 @@
               </AbstractNodeData>
             </Children>
             <AnchorPoint />
-            <Position X="804.5135" Y="474.9269" />
+            <Position />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.8380" Y="0.7421" />
+            <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
           </AbstractNodeData>
         </Children>
