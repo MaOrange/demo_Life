@@ -2,7 +2,6 @@
 
 //LifePllus
 
-std::string LifePlus::shield = "lifeShield_LB";
 
 void LifePlus::addShield(float x)
 {
@@ -66,11 +65,11 @@ bool LifePlus::initWithMaxLife(float max, const std::string fileName)
 	}
 
 	//hold handle
-	shieldLB = static_cast<ui::LoadingBar*>(this->getChildren().at(0)->getChildByName(shield));
+	_shieldLB = static_cast<ui::LoadingBar*>(this->getChildren().at(0)->getChildByName(SHIELD));
 
 	currentShield = 0;
 
-	shieldLB->setPercent(0);
+	_shieldLB->setPercent(0);
 
 
 	return true;
@@ -103,7 +102,7 @@ void LifePlus::addMaxLife(float x)
 void LifePlus::shieldUpdate()
 {
 	percentUpdate();
-	shieldLB->setPercent(percent + (currentShield) / (maxLife + currentShield) * 100);
-	onShowLD->setPercent(percent);
+	_shieldLB->setPercent(percent + (currentShield) / (maxLife + currentShield) * 100);
+	_onShowLD->setPercent(percent);
 	effectCheck();
 }

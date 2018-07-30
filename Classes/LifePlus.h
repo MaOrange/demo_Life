@@ -6,7 +6,7 @@
 
 #include"Life.h"
 
-
+#define SHIELD "lifeShield_LB"
 
 
 class LifePlus :public Life
@@ -36,9 +36,7 @@ protected:
 
 	float currentShield = 0;
 
-	static std::string shield;
-
-	ui::LoadingBar * shieldLB;
+	ui::LoadingBar * _shieldLB;
 
 	//bool init()override;
 

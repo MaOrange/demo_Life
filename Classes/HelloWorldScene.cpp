@@ -84,21 +84,21 @@ bool HelloWorld::init()
 		return false;
 	}
 	
-	Node* rootNode = CSLoader::createNode("demoLifeScene.csb");
+	Node* rootNode = CSLoader::createNode("Life/demoLifeScene.csb");
 
 	addChild(rootNode);
 
 	//my code:
-	newNode = Life::creatWithMaxLife(5000.0,"Life.csb");
+	newNode = Life::creatWithMaxLife(5000.0,"Life/Life.csb");
 
 	this->addChild(newNode,3);
 
 	newNode->setPosition(size.width/2,size.height/2);
 
 	//
-	lifePlus = LifePlus::creatWithMaxLife(5000.0f, "LifePlus.csb");
+	lifePlus = LifePlus::creatWithMaxLife(5000.0f, "Life/LifePlus.csb");
 	
-	this->addChild(lifePlus);
+	this->addChild(lifePlus,3);
 
 	lifePlus->setPosition(size.width/2,size.height*0.4);
 

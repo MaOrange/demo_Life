@@ -9,7 +9,7 @@ void Life::damage(float x)
 	currentLife-=x;
 	currentLife = (currentLife>0) ? (currentLife) : (currentLife=0);
 
-	onShowLD->setPercent(currentLife/maxLife*100);
+	_onShowLD->setPercent(currentLife/maxLife*100);
 
 	schedule(schedule_selector(Life::damageEffectCB), 1.0f / 60);
 
@@ -21,7 +21,7 @@ void Life::recover(float x)
 	currentLifeCheck();
 	percentUpdate();
 
-	onShowLD->setPercent(percent);
+	_onShowLD->setPercent(percent);
 
 	effectCheck();
 
@@ -41,7 +41,7 @@ bool Life::initWithMaxLife(float max, const std::string fileName)
 	//
 	auto tempScene = CSLoader::createNode(fileName);
 
-	Node* lifeRootNode = tempScene->getChildByName(root);
+	Node* lifeRootNode = tempScene->getChildByName(ROOT);
 
 	lifeRootNode->removeFromParent();
 
@@ -49,7 +49,7 @@ bool Life::initWithMaxLife(float max, const std::string fileName)
 
 	this->addChild(lifeRootNode);
 
-	rootNode = this->getChildren().at(0);
+	_rootNode = this->getChildren().at(0);
 
 	//
 
@@ -59,21 +59,21 @@ bool Life::initWithMaxLife(float max, const std::string fileName)
 
 	percentUpdate();
 
-	onShowLD= ((ui::LoadingBar*)rootNode->getChildByName(onShow));
+	_onShowLD= ((ui::LoadingBar*)_rootNode->getChildByName(ONSHOW));
 		
-	onShowLD->setPercent(percent);
+	_onShowLD->setPercent(percent);
 
-	effectLD = ((ui::LoadingBar*)rootNode->getChildByName(effect));
-	effectLD->setPercent(percent);
+	_effectLD = ((ui::LoadingBar*)_rootNode->getChildByName(EFFECT));
+	_effectLD->setPercent(percent);
 
 	return true;
 }
 
 void Life::effectCheck()
 {
-	if (effectLD->getPercent() < percent)
+	if (_effectLD->getPercent() < percent)
 	{
-		effectLD->setPercent(percent);
+		_effectLD->setPercent(percent);
 	}
 }
 
@@ -89,9 +89,9 @@ void Life::effectCheck()
 
 void Life::damageEffectCB(float dt)
 {
-	if (onShowLD->getPercent()<effectLD->getPercent())
+	if (_onShowLD->getPercent()<_effectLD->getPercent())
 	{
-		effectLD->setPercent(effectLD->getPercent()-dt*effectSpeed);
+		_effectLD->setPercent(_effectLD->getPercent()-dt*effectSpeed);
 	} 
 	else
 	{

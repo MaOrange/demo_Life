@@ -9,6 +9,12 @@
 #include "ui/CocosGUI.h"
 USING_NS_CC;
 
+#define BACKGROUND "lifeBackground_P"
+#define EFFECT "lifeEffect_LB"
+#define ONSHOW "lifeOnShow_LB"
+#define FRAME "lifeFrame_P"
+#define ROOT "lifeRootNode"
+
 
 
 class Life:public Node
@@ -41,17 +47,11 @@ protected:
 	float maxLife;
 	float currentLife;*/
 
-	const std::string backgournd = "lifeBackground_P";
-	const std::string effect = "lifeEffect_LB";
-	const std::string onShow = "lifeOnShow_LB";
-	const std::string frame = "lifeFrame_P";
-	const std::string root = "lifeRootNode";
+	ui::LoadingBar* _onShowLD;
 
-	ui::LoadingBar* onShowLD;
+	ui::LoadingBar* _effectLD;
 
-	ui::LoadingBar* effectLD;
-
-	Node* rootNode;
+	Node* _rootNode;
 
 	void damageEffectCB(float dt);
 
